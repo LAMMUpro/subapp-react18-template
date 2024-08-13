@@ -21,8 +21,7 @@ function App() {
           onUpdate:modelValue={() => setShowDialog(false)}
           default={<div>默认</div>}
           footer={<Footer id='123'>脚部</Footer>}
-        >
-        </MicroComponent>
+        ></MicroComponent>
       </div>
     </>
   );

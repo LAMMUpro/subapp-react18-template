@@ -22,6 +22,9 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./",
+    "types": [
+      "micro-app-utils/types/global.d.ts"
+    ],
     "paths": {
       "@/*": [
         "src/*"
