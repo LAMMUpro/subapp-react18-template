@@ -2,10 +2,9 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 
-let app = null;
+let app = createRoot(document.getElementById('root')!);
 
 window.mount = () => {
-  app = createRoot(document.getElementById('root')!);
   app.render(
     <StrictMode>
       <App />
@@ -14,6 +13,6 @@ window.mount = () => {
 }
 
 window.unmount = () => {
-  app = null;
+  app.render(<div></div>);
 }
 
