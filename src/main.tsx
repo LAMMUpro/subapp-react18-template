@@ -4,6 +4,7 @@ import App from './App.tsx';
 import { generateDataListener } from 'micro-app-utils/listener';
 import { MicroComponentSlotMap } from 'micro-app-utils/data';
 import React from 'react';
+import { isSubApp } from 'micro-app-utils';
 
 let app = createRoot(document.getElementById('root')!);
 
@@ -36,3 +37,6 @@ window.unmount = () => {
   app.render(<div></div>);
 }
 
+if (!isSubApp) {
+  window.mount();
+}
