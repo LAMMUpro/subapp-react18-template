@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import CONSTS from '@/utils/CONSTS';
+import CONSTS from './src/utils/CONSTS';
 import path from 'path';
 
 export default defineConfig({
