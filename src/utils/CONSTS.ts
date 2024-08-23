@@ -9,5 +9,5 @@ export default {
   /** 文档标题前缀 */
   PREFIX_DOCUMENT_TITLE: 'react18',
   /** 启动端口号 */
-  PORT: 1323,
+  PORT: 1340,
 };
