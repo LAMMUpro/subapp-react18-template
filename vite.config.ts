@@ -18,6 +18,7 @@ export default defineConfig({
     cors: true,
   },
   build: {
+    outDir: 'build',
     /** 配置资源打包目录 */
     assetsDir: './js',
     /** 分包后警告大小（未压缩大小） */
@@ -31,7 +32,7 @@ export default defineConfig({
     rollupOptions: {
       plugins: [],
       /** 打包排除这些依赖，保持import { xxx } from 'vue';这种导入 */
-      external: ['@micro-zoe/micro-app'],
+      // external: ['@micro-zoe/micro-app'],
       output: {
         format: 'esm', // 打包模式
         /**
@@ -39,7 +40,7 @@ export default defineConfig({
          * 对于external排除的依赖，直接从'vue'导入是无效的路径，所以需要配置对应资源路径
          */
         paths: {
-          '@micro-zoe/micro-app': `/${CONSTS.PREFIX_URL}/js/micro-app.4e9a0000_h.js`,
+          // '@micro-zoe/micro-app': `/${CONSTS.PREFIX_URL}/js/micro-app.4e9a0000_h.js`,
         },
         /** 分包 */
         manualChunks: {

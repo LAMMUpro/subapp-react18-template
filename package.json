@@ -8,7 +8,8 @@
     "tsc": "tsc -b",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "deploy": "s deploy -t s.master.yaml --use-local"
   },
   "dependencies": {
     "@micro-zoe/micro-app": "1.0.0-rc.6",
@@ -20,6 +21,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "local-tool": "^1.1.2",
     "typescript": "^5.5.3",
     "vite": "^5.4.0"
   }
