@@ -15,7 +15,8 @@
     "@micro-zoe/micro-app": "1.0.0-rc.6",
     "micro-app-utils": "workspace:*",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

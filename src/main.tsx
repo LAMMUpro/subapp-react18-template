@@ -1,10 +1,11 @@
-import { StrictMode } from 'react';
+import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App.tsx';
+
+import { isSubApp } from 'micro-app-utils';
 import { generateDataListener } from 'micro-app-utils/listener';
 import { MicroComponentSlotMap } from 'micro-app-utils/data';
-import React from 'react';
-import { isSubApp } from 'micro-app-utils';
+
+import App from './App.tsx';
 
 let app = createRoot(document.getElementById('root')!);
 
@@ -24,18 +25,19 @@ window.mount = () => {
       if (Element && component) {
         createRoot(Element).render(React.createElement(component.type, {
           ...component.props,
-          ...props,
+          ...props
         }));
       }
-    },
+    }
   });
   window.microApp?.addDataListener(dataListener, true);
-}
+  console.log('child-react17 getData:', window.microApp.getData());
+};
 
 window.unmount = () => {
   window.microApp?.removeDataListener(dataListener);
   app.render(<div></div>);
-}
+};
 
 if (!isSubApp) {
   window.mount();

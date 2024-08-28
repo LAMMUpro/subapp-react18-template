@@ -3,7 +3,7 @@ function micromainComponent() {
   return (
     <>
       <div>
-        react18派发组件
+        react18派发组件C
       </div>
     </>
   );
