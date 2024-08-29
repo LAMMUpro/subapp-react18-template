@@ -1,17 +1,16 @@
 import { useEffect } from 'react';
 import { createHashRouter, useNavigate } from 'react-router-dom';
 
-import routeComponent from '../src/pages/demo/routeComponent';
-import micromainComponent from '../src/pages/demo/micromainComponent';
-import testElement from '../src/pages/demo/testElement';
-import NotFound from '../src/pages/demo/404';
+import routeComponent from '@/pages/demo/routeComponent';
+import micromainComponent from '@/pages/demo/micromainComponent';
+import testElement from '@/pages/demo/testElement';
+import NotFound from '@/pages/demo/404';
 
 const Redirect = () => {
   const navigate = useNavigate();
   useEffect(() => {
     navigate('/micro-main');
   }, []);
-  // return <App/>
   return micromainComponent();
 };
 
