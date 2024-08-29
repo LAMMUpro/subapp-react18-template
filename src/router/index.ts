@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-import { createHashRouter, useNavigate } from 'react-router-dom';
-
+import { RouteObject, useNavigate } from 'react-router-dom';
 import routeComponent from '@/pages/demo/routeComponent';
 import micromainComponent from '@/pages/demo/micromainComponent';
 import testElement from '@/pages/demo/testElement';
@@ -14,38 +13,25 @@ const Redirect = () => {
   return micromainComponent();
 };
 
-const router = createHashRouter([
+export const baseRoutes: RouteObject[] = [
   {
     path: '/',
-    children: [
-      {
-        path: '/',
-        Component: Redirect
-      },
-      {
-        path: 'micro-main',
-        Component: micromainComponent
-      }
-    ]
+    Component: Redirect,
   },
   {
-    path: '/apptsx',
-    Component: routeComponent
+    path: '/demo/micromainComponent',
+    Component: micromainComponent,
   },
   {
     path: '/demo/routeComponent',
-    Component: routeComponent
+    Component: routeComponent,
   },
   {
     path: '/demo/test-element',
-    Component: testElement
+    Component: testElement,
   },
   {
     path: '*',
-    Component: NotFound
-  }
-], {
-  basename: '/'
-});
-
-export default router;
+    Component: NotFound,
+  },
+];
