@@ -31,7 +31,6 @@ window.mount = () => {
     }
   });
   window.microApp?.addDataListener(dataListener, true);
-  console.log('child-react17 getData:', window.microApp.getData());
 };
 
 window.unmount = () => {

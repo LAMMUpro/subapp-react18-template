@@ -10,7 +10,8 @@ const NavigatorFromBaseApp = () => {
   const location = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
-    window.microApp.addDataListener((data: Record<string, unknown>) => {
+    window.microApp?.addDataListener(data => {
+      // TODO
       // 当基座下发path时进行跳转
       if (data.path && data.path !== history.location.pathname) {
         navigate.push(data.path as string);
