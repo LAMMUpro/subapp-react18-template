@@ -44,7 +44,8 @@ export default defineConfig({
         },
         /** 分包 */
         manualChunks: {
-          // 'micro-app': ['@micro-zoe/micro-app'],
+          'react': ['react', 'react-dom'],
+          'react-router-dom': ['react-router-dom'],
         },
         /** 入口文件输出格式 */
         entryFileNames: 'js/[name].[hash]_h.js',
