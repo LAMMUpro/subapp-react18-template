@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
-import { RouteObject, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import type { RouteObject } from 'react-router-dom'
+
 import routeComponent from '@/pages/demo/routeComponent';
 import micromainComponent from '@/pages/demo/micromainComponent';
 import testElement from '@/pages/demo/testElement';
