@@ -1,24 +1,15 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import type { RouteObject } from 'react-router-dom'
 
 import routeComponent from '@/pages/demo/routeComponent';
 import micromainComponent from '@/pages/demo/micromainComponent';
 import testElement from '@/pages/demo/testElement';
 import NotFound from '@/pages/demo/404';
-
-const Redirect = () => {
-  const navigate = useNavigate();
-  useEffect(() => {
-    navigate('/micro-main');
-  }, []);
-  return micromainComponent();
-};
+import PageEmpty from '@/pages/empty';
 
 export const baseRoutes: RouteObject[] = [
   {
-    path: '/',
-    Component: Redirect,
+    path: '/empty',
+    Component: PageEmpty,
   },
   {
     path: '/demo/micromainComponent',
