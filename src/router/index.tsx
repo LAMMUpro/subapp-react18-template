@@ -1,4 +1,3 @@
-import React from 'react';
 import type { RouteObject } from 'react-router-dom';
 
 import MicroComponent from 'micro-app-utils/react18/MicroComponent';
@@ -9,7 +8,6 @@ import TestElement from '@/pages/demo/testElement';
 import Interceptor from '@/router/interceptor';
 import PageEmpty from '@/pages/empty';
 
-
 export const baseRoutes: RouteObject[] = [
   {
     path: '/empty',
@@ -17,24 +15,24 @@ export const baseRoutes: RouteObject[] = [
   },
   {
     path: '/demo/micromainComponent',
-    element: <MicromainComponent />
+    element: <MicromainComponent />,
   },
   {
     path: '/demo/routeComponent',
-    element: <RouteComponent />
+    element: <RouteComponent />,
   },
   {
     path: '/demo/test-element',
-    element: <TestElement />
+    element: <TestElement />,
   },
   {
     path: '*',
-    element: <MicroComponent _is="Page404" />
-  }
+    element: <MicroComponent _is="Page404" />,
+  },
 ];
 
 const wrapRoutesWithAnthRouter = (routes: RouteObject[]): RouteObject[] => {
-  return routes.map(route => {
+  return routes.map((route) => {
     const wrappedRoute: RouteObject = {
       ...route,
       element: <Interceptor>{route.element}</Interceptor>,
