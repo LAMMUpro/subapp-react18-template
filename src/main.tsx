@@ -1,16 +1,15 @@
 import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import type {RemixRouter} from 'react-router-dom'
+import { Router } from '@remix-run/router';
 import { createHashRouter } from 'react-router-dom';
 
 import { isSubApp } from 'micro-app-utils';
 import { generateDataListener } from 'micro-app-utils/listener';
 import { MicroComponentSlotMap } from 'micro-app-utils/data';
 
-import {routes} from '@/router';
+import { routes } from '@/router';
 
 import App from './App.tsx';
-
 
 let app = createRoot(document.getElementById('root')!);
 
@@ -22,7 +21,7 @@ let dataListener: (data: BaseObj<any>) => void;
  */
 window.mount = () => {
   /** 每次mount需要重新构建路由 */
-  const router: RemixRouter = createHashRouter(routes, {
+  const router: Router = createHashRouter(routes, {
     basename: '/',
   });
 

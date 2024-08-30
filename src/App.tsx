@@ -1,7 +1,7 @@
 import {RouterProvider} from 'react-router-dom';
-import type { RemixRouter } from 'react-router-dom'
+import { Router } from '@remix-run/router'
 
-export default function App({router}: { router: RemixRouter }) {
+export default function App({router}: { router: Router }) {
     return (
         <RouterProvider
             router={router}
