@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { matchRoutes, useNavigate } from "react-router-dom";
 import { baseRoutes } from './index';
 
-const AuthRoute = ({ children, auth }: any) => {
+const Interceptor = ({ children, auth }: any) => {
   const navigate = useNavigate();
   // TODO 获取路由信息
   // const token = localStorage.getItem("blogToken") || "";
@@ -32,4 +32,4 @@ const AuthRoute = ({ children, auth }: any) => {
   return children;
 };
 
-export default AuthRoute
+export default Interceptor
