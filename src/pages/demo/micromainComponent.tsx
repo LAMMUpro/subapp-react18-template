@@ -36,6 +36,7 @@ function micromainComponent() {
           <MicroComponent
             _is="BaseDialog"
             modelValue={isShowDialog}
+            onUpdate:modelValue={() => setIsShowDialog(false)}
             default={
               <div>
                 <div>默认插槽:{number}</div>
