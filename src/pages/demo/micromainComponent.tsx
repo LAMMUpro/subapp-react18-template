@@ -7,7 +7,7 @@ function micromainComponent() {
   return (
     <>
       <div>
-        <section>
+        {/* <section>
           <p>SvgIcon图标</p>
           <MicroComponent
             _is="SvgIcon"
@@ -29,7 +29,7 @@ function micromainComponent() {
             style="margin-right: 6px"
             name="zhanwei"
           ></MicroComponent>
-        </section>
+        </section> */}
 
         <section>
           <button onClick={() => setIsShowDialog(true)}>点击弹窗:{number}</button>

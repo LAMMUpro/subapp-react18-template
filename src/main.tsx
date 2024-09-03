@@ -5,7 +5,7 @@ import { createHashRouter } from 'react-router-dom';
 
 import { isSubApp } from 'micro-app-utils';
 import { generateDataListener } from 'micro-app-utils/listener';
-import { MicroComponentSlotMap } from 'micro-app-utils/data';
+import { MicroComponentSlotMap, ReactMicroComponentSlotInfoMap } from 'micro-app-utils/data';
 
 import { routes } from '@/router';
 
@@ -33,10 +33,31 @@ window.mount = () => {
 
   dataListener = generateDataListener({
     micro_component: ({ slotName, elementId, props, parentElementId }) => {
+      /** 
+       * react比vue项目比，多出这个步骤：将插槽的信息存储起来
+       */
+      if (ReactMicroComponentSlotInfoMap[parentElementId]) {
+        ReactMicroComponentSlotInfoMap[parentElementId][slotName] = {
+          elementId,
+        };
+      } else {
+        ReactMicroComponentSlotInfoMap[parentElementId] = {
+          [slotName]: {
+            elementId,
+          },
+        };
+      }
+
+      /**
+       * 渲染插槽
+       */
       const Element = document.body.querySelector(`#${elementId}`);
       const component = MicroComponentSlotMap[parentElementId]?.[slotName];
       if (Element && component) {
-        createRoot(Element).render(
+        const root = createRoot(Element);
+        /** 保存root，之后更新的时候可以继续渲染（MicroComponent.tsx内调用） */
+        ReactMicroComponentSlotInfoMap[parentElementId][slotName].root = root;
+        root.render(
           React.createElement(component.type, {
             ...component.props,
             ...props,
