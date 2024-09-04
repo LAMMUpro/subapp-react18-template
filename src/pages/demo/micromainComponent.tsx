@@ -5,10 +5,10 @@ function micromainComponent() {
   const [isShowDialog, setIsShowDialog] = useState(false);
   const [number, setNumber] = useState(1);
   return (
-    <>
+    <div>
       <div>
-        {/* <section>
-          <p>SvgIcon图标</p>
+        <section className="-m-card lightblue">
+          <p className="-m-title">SvgIcon图标</p>
           <MicroComponent
             _is="SvgIcon"
             style="margin-right: 6px"
@@ -29,9 +29,10 @@ function micromainComponent() {
             style="margin-right: 6px"
             name="zhanwei"
           ></MicroComponent>
-        </section> */}
+        </section>
 
-        <section>
+        <section className="-m-card lightcoral">
+          <span className="-m-title">Dialog弹窗</span>
           <button onClick={() => setIsShowDialog(true)}>点击弹窗:{number}</button>
           <MicroComponent
             _is="BaseDialog"
@@ -54,11 +55,31 @@ function micromainComponent() {
                 </button>
               </div>
             }
-            footer={<div>脚部</div>}
+            footer={
+              <div>
+                <button
+                  className="btn"
+                  onClick={() => setIsShowDialog(false)}
+                >
+                  确定
+                </button>
+                <button
+                  className="btn"
+                  style={{
+                    marginLeft: '10px',
+                    backgroundColor: 'rgb(241, 241, 241)',
+                    color: 'gray',
+                  }}
+                  onClick={() => setIsShowDialog(false)}
+                >
+                  关闭
+                </button>
+              </div>
+            }
           ></MicroComponent>
         </section>
       </div>
-    </>
+    </div>
   );
 }
 
