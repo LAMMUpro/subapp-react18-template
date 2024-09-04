@@ -12,7 +12,7 @@
     "deploy": "s deploy -t s.master.yaml --use-local"
   },
   "dependencies": {
-    "@micro-zoe/micro-app": "1.0.0-rc.6",
+    "@micro-zoe/micro-app": "1.0.0-rc.8",
     "micro-app-utils": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
