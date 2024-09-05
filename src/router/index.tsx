@@ -6,6 +6,7 @@ import RouteComponent from '@/pages/demo/routeComponent';
 import MicromainComponent from '@/pages/demo/micromainComponent';
 import TestElement from '@/pages/demo/testElement';
 import Interceptor from '@/router/interceptor';
+import Home from '@/pages/home';
 
 /**
  * demo路由
@@ -22,6 +23,10 @@ const demoRoutes: RouteObject[] = [
   {
     path: '/demo/test-element',
     element: <TestElement />,
+  },
+  {
+    path: '/home',
+    element: <Home />,
   },
 ]
 
