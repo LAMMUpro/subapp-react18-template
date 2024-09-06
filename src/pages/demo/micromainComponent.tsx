@@ -8,7 +8,7 @@ function micromainComponent() {
     <div>
       <div>
         <section className="-m-card lightblue">
-          <p className="-m-title">SvgIcon图标</p>
+          <p className="-m-title">react-SvgIcon图标</p>
           <MicroComponent
             _is="SvgIcon"
             style="margin-right: 6px"
@@ -32,7 +32,7 @@ function micromainComponent() {
         </section>
 
         <section className="-m-card lightcoral">
-          <span className="-m-title">Dialog弹窗</span>
+          <span className="-m-title">react-Dialog弹窗</span>
           <button onClick={() => setIsShowDialog(true)}>打开弹窗:{number}</button>
           <MicroComponent
             _is="BaseDialog"
