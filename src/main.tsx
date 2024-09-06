@@ -2,14 +2,100 @@ import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Router } from '@remix-run/router';
 import { createHashRouter } from 'react-router-dom';
+import microApp from '@micro-zoe/micro-app';
 
-import { isSubApp, sendDataDown } from 'micro-app-utils';
+import { isSubApp, sendDataDown, sendDataUp, MicroAppInit } from 'micro-app-utils';
 import { generateDataListener } from 'micro-app-utils/listener';
 import { MicroComponentSlotMap, ReactMicroComponentSlotInfoMap } from 'micro-app-utils/data';
 
 import { routes } from '@/router';
+import CONSTS from '@/utils/CONSTS';
 
 import App from './App.tsx';
+
+/** 初始化微前端配置 */
+MicroAppInit<'localhost' | 'test' | 'pre' | 'master'>({
+  env: process.env.NODE_ENV === 'development' ? 'localhost' : 'master',
+  tagName: CONSTS.microAppTagName,
+  dataListener: generateDataListener({
+    /** 子应用接收到这个请求需要往上传递，直到传给顶部主应用 */
+    micro_component_request: (data) => {
+      sendDataUp({
+        emitName: 'micro_component_request',
+        parameters: [{
+          ...data,
+          subAppNameList: [...data.subAppNameList, window.__MICRO_APP_NAME__!]
+        }],
+      });
+    },
+  }),
+  subAppSettingList: [
+    {
+      name: 'micromain',
+      prefix: 'micromain',
+      routerMode: 'history',
+      urlMap: {
+        localhost: '//127.0.0.1:1314/micromain/',
+        test: 'https://micro-admin-template.lammu.cn/micromain/',
+        pre: 'https://micro-admin-template.lammu.cn/micromain/',
+        master: 'https://micro-admin-template.lammu.cn/micromain/',
+      },
+      builder: 'vite',
+      iframe: true,
+      framework: 'vue3',
+    },
+    {
+      name: 'vue3',
+      prefix: 'vue3',
+      routerMode: 'hash',
+      urlMap: {
+        localhost: '//127.0.0.1:1320/vue3/',
+        test: 'https://micro-admin-template.lammu.cn/vue3/',
+        pre: 'https://micro-admin-template.lammu.cn/vue3/',
+        master: 'https://micro-admin-template.lammu.cn/vue3/',
+      },
+      builder: 'vite',
+      iframe: true,
+      framework: 'vue3',
+    },
+    {
+      name: 'vue2',
+      prefix: 'vue2',
+      routerMode: 'hash',
+      urlMap: {
+        localhost: '//127.0.0.1:1330/vue2/',
+        test: 'https://micro-admin-template.lammu.cn/vue2/',
+        pre: 'https://micro-admin-template.lammu.cn/vue2/',
+        master: 'https://micro-admin-template.lammu.cn/vue2/',
+      },
+      builder: 'webpack',
+      iframe: false,
+      framework: 'vue2',
+    },
+    {
+      name: 'react18',
+      prefix: 'react18',
+      routerMode: 'hash',
+      urlMap: {
+        localhost: '//127.0.0.1:1340/react18/',
+        test: 'https://micro-admin-template.lammu.cn/react18/',
+        pre: 'https://micro-admin-template.lammu.cn/react18/',
+        master: 'https://micro-admin-template.lammu.cn/react18/',
+      },
+      builder: 'vite',
+      iframe: true,
+      framework: 'react18',
+    },
+  ],
+});
+
+/** 启动微前端 */
+microApp.start({
+  tagName: CONSTS.microAppTagName,
+  /** 防止子应用请求父应用资源（部署时需要配置这个url指向这个文件） */
+  iframeSrc: `/micromain/empty.html`,
+  'keep-router-state': true,
+});
 
 let app = createRoot(document.getElementById('__subapp_react18')!);
 
