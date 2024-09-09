@@ -1,6 +1,5 @@
 import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Router } from '@remix-run/router';
 import { createHashRouter } from 'react-router-dom';
 import microApp from '@micro-zoe/micro-app';
 
@@ -52,7 +51,7 @@ let dataListener: (data: BaseObj<any>) => void;
  */
 window.mount = () => {
   /** 每次mount需要重新构建路由 */
-  const router: Router = createHashRouter(routes, {
+  const router = createHashRouter(routes, {
     basename: '/',
   });
 

@@ -1,7 +1,6 @@
-import {RouterProvider} from 'react-router-dom';
-import { Router } from '@remix-run/router'
+import {RouterProvider, createHashRouter} from 'react-router-dom';
 
-export default function App({router}: { router: Router }) {
+export default function App({router}: { router: ReturnType<typeof createHashRouter> }) {
     return (
         <RouterProvider
             router={router}
