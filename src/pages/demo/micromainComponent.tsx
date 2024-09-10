@@ -35,7 +35,8 @@ function micromainComponent() {
           <span className="-m-title">react-Dialog弹窗</span>
           <button onClick={() => setIsShowDialog(true)}>打开弹窗:{number}</button>
           <MicroComponent
-            _is="BaseDialog"
+            _is="ElDialog"
+            title="主应用的弹窗"
             modelValue={isShowDialog}
             onUpdate:modelValue={() => setIsShowDialog(false)}
             default={
