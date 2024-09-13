@@ -1,3 +1,4 @@
+import MicroApp from 'micro-app-utils/react18/MicroApp';
 
 function routeComponent() {
   return (
@@ -10,6 +11,12 @@ function routeComponent() {
           url="//127.0.0.1:1320/vue3/"
           default-page="/vue3/#/home"
         ></micro-app-react18>
+        <MicroApp
+          _name="vue3"
+          _prefix="vue3-1-6"
+          _path="/vue3/#/demo/micromainComponent"
+          _defaultPage='/vue3/#/demo/micromainComponent'
+        />
       </div>
     </>
   );
