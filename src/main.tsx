@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { createHashRouter } from 'react-router-dom';
 import microApp from '@micro-zoe/micro-app';
 
-import { isSubApp, sendDataDown, sendDataUp, MicroAppInit } from 'micro-app-utils';
+import { isTopApp, sendDataDown, sendDataUp, MicroAppInit } from 'micro-app-utils';
 import { generateDataListener } from 'micro-app-utils/listener';
 import { MicroComponentSlotMap, ReactMicroComponentSlotInfoMap } from 'micro-app-utils/data';
 
@@ -146,6 +146,6 @@ window.unmount = () => {
 /**
  * 应用独立运行时，直接运行渲染钩子函数
  */
-if (!isSubApp) {
+if (isTopApp) {
   window.mount();
 }
