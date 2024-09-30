@@ -9,24 +9,24 @@ function micromainComponent() {
     <div>
       <div>
         <section className="-m-card lightblue">
-          <p className="-m-title">react-SvgIcon图标</p>
+          <p className="-m-title">react-UseSvg图标</p>
           <MicroComponent
-            _is="SvgIcon"
+            _is="UseSvg"
             style="margin-right: 6px"
             name="Github"
           ></MicroComponent>
           <MicroComponent
-            _is="SvgIcon"
+            _is="UseSvg"
             style="margin-right: 6px"
             name="arrow-bottom"
           ></MicroComponent>
           <MicroComponent
-            _is="SvgIcon"
+            _is="UseSvg"
             style="margin-right: 6px"
             name="docs-question"
           ></MicroComponent>
           <MicroComponent
-            _is="SvgIcon"
+            _is="UseSvg"
             style="margin-right: 6px"
             name="zhanwei"
           ></MicroComponent>

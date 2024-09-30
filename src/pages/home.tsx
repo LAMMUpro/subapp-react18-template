@@ -7,7 +7,7 @@ function home() {
       <section className={`-m-card`} style={{ backgroundColor: '#282c34', textAlign: 'center' }}>
         <MicroComponent
           className={`${styles.animation}`}
-          _is="SvgIcon"
+          _is="UseSvg"
           name="react"
           size="400px"
         ></MicroComponent>
