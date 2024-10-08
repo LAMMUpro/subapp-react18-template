@@ -1,5 +1,6 @@
 import MicroComponent from 'micro-app-utils/react18/MicroComponent';
 import styles from './home.module.scss';
+import { getLottieJsonLink } from '@/utils';
 
 function home() {
   return (
@@ -7,13 +8,14 @@ function home() {
       <section className={`-m-card`} style={{ backgroundColor: '#282c34', textAlign: 'center' }}>
         <MicroComponent
           className={`${styles.animation}`}
-          _is="UseSvg"
-          name="react"
-          size="400px"
+          _is="Lottie"
+          width={600}
+          height={600}
+          animation-link={getLottieJsonLink('react')}
         ></MicroComponent>
         
         <div style={{ color: 'white' }}>
-          react18子应用首页
+          react18子应用首页，👆lottie图标
         </div>
       </section>
     </>
