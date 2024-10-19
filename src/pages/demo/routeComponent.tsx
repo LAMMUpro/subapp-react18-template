@@ -1,4 +1,4 @@
-import MicroApp from 'micro-app-utils/react18/MicroApp';
+import MicroApp from 'micro-app-tools/react18/MicroApp';
 
 function routeComponent() {
   return (

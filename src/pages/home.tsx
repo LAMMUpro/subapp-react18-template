@@ -1,4 +1,4 @@
-import MicroComponent from 'micro-app-utils/react18/MicroComponent';
+import MicroComponent from 'micro-app-tools/react18/MicroComponent';
 import styles from './home.module.scss';
 import { getLottieJsonLink } from '@/utils';
 
@@ -13,7 +13,7 @@ function home() {
           height={600}
           animation-link={getLottieJsonLink('react')}
         ></MicroComponent>
-        
+
         <div style={{ color: 'white' }}>
           react18子应用首页，👆lottie图标
         </div>

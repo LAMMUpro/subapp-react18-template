@@ -3,9 +3,9 @@ import { createRoot } from 'react-dom/client';
 import { createHashRouter } from 'react-router-dom';
 import microApp from '@micro-zoe/micro-app';
 
-import { isTopApp, sendDataDown, sendDataUp, MicroAppInit } from 'micro-app-utils';
-import { generateDataListener } from 'micro-app-utils/listener';
-import { MicroComponentSlotMap, ReactMicroComponentSlotInfoMap } from 'micro-app-utils/data';
+import { isTopApp, sendDataDown, sendDataUp, MicroAppInit } from 'micro-app-tools';
+import { generateDataListener } from 'micro-app-tools/listener';
+import { MicroComponentSlotMap, ReactMicroComponentSlotInfoMap } from 'micro-app-tools/data';
 
 import { routes } from '@/router';
 import CONSTS from '@/utils/CONSTS';

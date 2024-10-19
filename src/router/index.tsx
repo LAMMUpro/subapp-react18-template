@@ -1,6 +1,6 @@
 import type { RouteObject } from 'react-router-dom';
 
-import MicroComponent from 'micro-app-utils/react18/MicroComponent';
+import MicroComponent from 'micro-app-tools/react18/MicroComponent';
 
 import RouteComponent from '@/pages/demo/routeComponent';
 import MicromainComponent from '@/pages/demo/micromainComponent';
@@ -36,15 +36,15 @@ const demoRoutes: RouteObject[] = [
 export const baseRoutes: RouteObject[] = [
   {
     path: '/empty',
-    element: <MicroComponent _is="PageEmpty"/>,
+    element: <MicroComponent _is="PageEmpty" />,
   },
   {
     path: '/404',
-    element: <MicroComponent _is="Page404"/>,
+    element: <MicroComponent _is="Page404" />,
   },
   {
     path: '/403',
-    element: <MicroComponent _is="Page403"/>,
+    element: <MicroComponent _is="Page403" />,
   },
   {
     path: '*',
