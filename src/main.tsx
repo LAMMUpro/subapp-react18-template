@@ -3,8 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { createHashRouter } from 'react-router-dom';
 import microApp from '@micro-zoe/micro-app';
 
-import { isTopApp, sendDataDown, sendDataUp, MicroAppInit } from 'micro-app-tools';
-import { generateDataListener } from 'micro-app-tools/listener';
+import { isTopApp, sendDataDown, sendDataUp, SubMicroAppInit } from 'micro-app-tools';
+import { generateDataListener } from 'micro-app-tools/react18/index';
 import { MicroAppConfig, MicroComponentSlotMap, ReactMicroComponentSlotInfoMap, setMicroAppInitFunction } from 'micro-app-tools/data';
 
 import { routes } from '@/router';
@@ -22,7 +22,7 @@ MicroAppConfig.subAppSettingList = window._subAppSettingList_;
  */
 setMicroAppInitFunction(() => {
   /** 初始化微前端配置 */
-  MicroAppInit<'localhost' | 'test' | 'pre' | 'master'>({
+  SubMicroAppInit<'localhost' | 'test' | 'pre' | 'master'>({
     env: process.env.NODE_ENV === 'development' ? 'localhost' : 'master',
     tagName: CONSTS.microAppTagName,
     dataListener: generateDataListener({
