@@ -4,7 +4,7 @@ function routeComponent() {
   return (
     <>
       <div>
-        <section className="-m-card lightgoldenrodyellow">
+        <section className="-m-card">
           <h3 className="-m-title">在react中访问vue3路由</h3>
           <span>ps：同时vue3页面使用了派发组件</span>
         </section>
@@ -19,7 +19,7 @@ function routeComponent() {
           _path="/vue3/#/demo/micromainComponent"
         ></MicroApp>
 
-        <section className="-m-card lightgoldenrodyellow">
+        <section className="-m-card">
           <h3 className="-m-title">在react中访问vue2路由</h3>
           <span>ps：同时vue2页面使用了派发组件</span>
         </section>

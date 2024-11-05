@@ -8,7 +8,7 @@ function micromainComponent() {
   return (
     <div>
       <div>
-        <section className="-m-card lightblue">
+        <section className="-m-card">
           <p className="-m-title">react-UseSvg图标</p>
           <MicroComponent
             _is="UseSvg"
@@ -32,7 +32,7 @@ function micromainComponent() {
           ></MicroComponent>
         </section>
 
-        <section className="-m-card lightsalmon">
+        <section className="-m-card">
           <span className="-m-title">react-Dialog弹窗</span>
           <button onClick={() => setIsShowDialog(true)}>打开弹窗:{number}</button>
           <MicroComponent
@@ -56,7 +56,7 @@ function micromainComponent() {
                   计数器加1
                 </button>
                 <section
-                  className="-m-card lightgoldenrodyellow"
+                  className="-m-card"
                   style={{ marginTop: '10px' }}
                 >
                   <span className="-m-title">溢出滚动测试</span>
@@ -146,7 +146,7 @@ function micromainComponent() {
           ></MicroComponent>
         </section>
 
-        <section className="-m-card lightcoral">
+        <section className="-m-card">
           <span className="-m-title">react-富文本组件</span>
           <MicroComponent _is="UseTinymce" modelValue={tinymceValue} onUpdate: modelValue={setTinymceValue}></MicroComponent>
           <button onClick={() => console.log(tinymceValue)}>点击打印对应值</button>
