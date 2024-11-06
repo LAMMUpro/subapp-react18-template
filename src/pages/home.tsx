@@ -9,8 +9,8 @@ function home() {
         <MicroComponent
           className={`${styles.animation}`}
           _is="Lottie"
-          width={600}
-          height={600}
+          width={'100%'}
+          height={'100%'}
           animation-link={getLottieJsonLink('react')}
         ></MicroComponent>
 
