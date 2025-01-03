@@ -81,9 +81,9 @@ window.mount = () => {
   });
 
   app.render(
-    <StrictMode>
+    // <StrictMode>
       <App router={router} />
-    </StrictMode>
+    // </StrictMode>
   );
 
   dataListener = generateDataListener({

@@ -5,6 +5,7 @@ import MicroComponent from 'micro-app-tools/react18/MicroComponent';
 import RouteComponent from '@/pages/demo/routeComponent';
 import MicromainComponent from '@/pages/demo/micromainComponent';
 import TestElement from '@/pages/demo/testElement';
+import FrameLessUI from '@/pages/demo/frameLessUI';
 import Interceptor from '@/router/interceptor';
 import Home from '@/pages/home';
 
@@ -23,6 +24,10 @@ const demoRoutes: RouteObject[] = [
   {
     path: '/demo/test-element',
     element: <TestElement />,
+  },
+  {
+    path: '/demo/frame-less-ui',
+    element: <FrameLessUI />,
   },
   {
     path: '/home',
