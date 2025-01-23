@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import FlPagingSelect from 'frame-less-ui/react/paging-select';
-import FlButton from 'frame-less-ui/react/button';
+import FlQrCode from 'frame-less-ui/react/qr-code';
 
 function api() {
   function generateId() {
@@ -44,18 +44,13 @@ export default function frameLessUI() {
   })
   return <div className="">
     <section className="-m-card">
-      <h2 className="-m-title">button(按钮)</h2>
-      <FlButton>
-        按钮
-      </FlButton>
-      <div className="mt-3">{ JSON.stringify(info) }</div>
-    </section>
-
-    <section className="-m-card">
-      <h2 className="-m-title">paging-select(分页选择器)</h2>
+      <h2 className="-m-title">react使用fl-paging-select</h2>
       <FlPagingSelect
-        id={info.id}
+        value={info.id}
+        // onUpdateValue={(value: string) => setInfo({...info, id: value})}
         label={info.name}
+        // onUpdateLabel={(label: string) => setInfo({...info, name: label})}
+        onChange={(_, item: any) => setInfo(item)}
         api={api}
         immediate
         optionSetting={{ label: 'name', id: 'id' }}
@@ -66,20 +61,8 @@ export default function frameLessUI() {
     </section>
 
     <section className="-m-card">
-      <h2 className="-m-title">button(按钮)</h2>
-      <fl-button type="primary">普通按钮</fl-button>
-      <fl-button
-        className="ml-1"
-        type="success"
-      >成功按钮</fl-button>
-      <fl-button
-        className="ml-1"
-        type="warning"
-      >警告按钮</fl-button>
-      <fl-button
-        className="ml-1"
-        type="danger"
-      >危险按钮</fl-button>
+      <h2 className="-m-title">react使用fl-qr-code</h2>
+      <FlQrCode text="https://micro-admin-template.lammu.cn/micromain/demo/frame-less-ui"></FlQrCode>
     </section>
   </div>;
 }

@@ -9,13 +9,13 @@ function home() {
         <MicroComponent
           className={`${styles.animation}`}
           _is="Lottie"
-          width={'100%'}
-          height={'100%'}
+          width={'50%'}
+          height={'50%'}
           animation-link={getLottieJsonLink('react')}
         ></MicroComponent>
 
         <div style={{ color: 'white' }}>
-          react18子应用首页，👆lottie图标
+          react18子应用首页
         </div>
       </section>
     </>

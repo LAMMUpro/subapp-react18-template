@@ -9,7 +9,7 @@ function micromainComponent() {
     <div>
       <div>
         <section className="-m-card">
-          <p className="-m-title">react-UseSvg图标</p>
+          <p className="-m-title">react使用主应用的UseSvg</p>
           <MicroComponent
             _is="UseSvg"
             style="margin-right: 6px"
@@ -33,13 +33,13 @@ function micromainComponent() {
         </section>
 
         <section className="-m-card">
-          <span className="-m-title">react-Dialog弹窗</span>
+          <span className="-m-title">react使用主应用的Dialog</span>
           <button onClick={() => setIsShowDialog(true)}>打开弹窗:{number}</button>
           <MicroComponent
             _is="ElDialog"
             title="主应用的弹窗"
             modelValue={isShowDialog}
-            onUpdate: modelValue={() => setIsShowDialog(false)}
+            onUpdate:modelValue={() => setIsShowDialog(false)}
             default={
               <div>
                 <div>默认插槽:{number}</div>
@@ -147,7 +147,7 @@ function micromainComponent() {
         </section>
 
         <section className="-m-card">
-          <span className="-m-title">react-富文本组件</span>
+          <span className="-m-title">react使用主应用的Tinymce</span>
           <MicroComponent _is="UseTinymce" modelValue={tinymceValue} onUpdate: modelValue={setTinymceValue}></MicroComponent>
           <button onClick={() => console.log(tinymceValue)}>点击打印对应值</button>
         </section>
